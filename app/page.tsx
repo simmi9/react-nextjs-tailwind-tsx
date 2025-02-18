@@ -1,5 +1,4 @@
 import React from 'react'
-import { URLSearchParams } from 'url'
 import { Movie } from './types/Movie'
 import MovieResults from '@/components/MovieResults'
 const  API_KEY= process.env.API_KEY
@@ -15,6 +14,7 @@ export default async function Home({searchParams}:any) {
 
   return (
     <div>
+
 {results&& <MovieResults movies={results}/>
 }
     </div>

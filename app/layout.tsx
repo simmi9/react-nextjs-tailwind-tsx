@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Providers from "./Providers";
 import NavbarLayer from "@/components/NavbarLayer";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,10 +26,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-white`}
       >
         <Providers>
         <Header/>
