@@ -3,7 +3,7 @@ import React, { JSX } from 'react'
 import {ThemeProvider} from 'next-themes'
 
 type Props = {
-  children: string | JSX.Element | JSX.Element[] 
+  children: string | JSX.Element | JSX.Element[] | React.ReactNode;
 }
 export default function Providers({children}:Props) {
   return (
