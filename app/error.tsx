@@ -5,7 +5,7 @@ interface BoundaryProps{
     error: Error;
     reset:()=>void
 }
-export default function error({error,reset}:BoundaryProps) {
+export default function Error({error,reset}:BoundaryProps) {
     useEffect(()=>{
     console.log(error)
     },[error])
