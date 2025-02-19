@@ -2,7 +2,7 @@ import React from 'react'
 import { Movie } from './types/Movie'
 import MovieResults from '@/components/MovieResults'
 type Props={
-  searchParams:{ genre:string}
+  searchParams:{ [key: string]: string | string[] | undefined }
 }
 
 export default async function Home({searchParams}:Props) {
