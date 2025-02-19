@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     }
 
     ,
-    pageExtensions: ['page.tsx', 'page.ts', 'ts'],
+    pageExtensions: ['page.tsx', 'page.ts', 'ts', 'tsx'],
 };
 
 export default nextConfig;
