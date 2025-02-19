@@ -2,13 +2,14 @@
 import MovieResults from '@/components/MovieResults';
 import React from 'react'
 type Props={
-  searchParams:{ genre:string, searchTerm:string}
-}
+    searchParams:Promise<{ [key: string]: string | string[] | undefined }>
+  }
 export default  async function  SearchPage({searchParams}:Props) {
 
     const  API_KEY= process.env.REACT_APP_API_KEY;
+const params= await searchParams;
 
- const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchParams.searchTerm}&language=en-US&page=1&include_adult=false`)
+ const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${params.searchTerm}&language=en-US&page=1&include_adult=false`)
 const data= await res.json()
 if(!res.ok){
     throw Error;
