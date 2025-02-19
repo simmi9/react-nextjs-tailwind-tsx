@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Movie } from './types/Movie'
 import MovieResults from '@/components/MovieResults'
 type Props={
@@ -18,9 +18,10 @@ export default async function Home({searchParams}:Props) {
 
   return (
     <div>
-
+    <Suspense fallback={<div className="text-center">Loading...</div>}>
 {results && <MovieResults movies={results}/>
 }
+</Suspense>
     </div>
   )
 }
