@@ -1,28 +1,18 @@
 'use client'
-import { Movie } from '@/app/types/Movie';
 import MovieResults from '@/components/MovieResults';
 import { useParams } from 'next/navigation'
-import React,{useEffect,useState} from 'react'
-const  API_KEY= process.env.API_KEY;
+import React from 'react'
 
-export default function  SearchPage() {
+export default  async function  SearchPage() {
     const params= useParams()
-    const [results,setResults] =useState<Movie[]>();
+    const  API_KEY= process.env.REACT_APP_API_KEY;
 
-
-const fetchData = async()=>{
-    const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${params.searchTerm}&language=en-US&page=1&include_adult=false`)
+ const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${params.searchTerm}&language=en-US&page=1&include_adult=false`)
 const data= await res.json()
 if(!res.ok){
     throw Error;
 }
 const results=data.results;
-setResults(results)
-}
-
-useEffect(()=>{
-    fetchData()
-},[])
 
   return (
     <div>
