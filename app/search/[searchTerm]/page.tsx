@@ -4,7 +4,7 @@ import Card from '@/components/Card';
 import MovieResults from '@/components/MovieResults';
 import { useParams } from 'next/navigation'
 import React,{useEffect,useState} from 'react'
-const  API_KEY= 'fe1544f842bee1e47c227fa8188a4219'//window.process.env.API_KEY;
+const  API_KEY= process.env.API_KEY;
 
 export default function  SearchPage() {
     const params= useParams()
