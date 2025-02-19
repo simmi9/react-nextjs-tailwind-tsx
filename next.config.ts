@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
     env: {
       REACT_APP_API_KEY: process.env.REACT_APP_API_KEY,
     }
+
+    ,
+    pageExtensions: ['page.tsx', 'page.ts'],
 };
 
 export default nextConfig;
