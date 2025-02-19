@@ -1,13 +1,14 @@
-'use client'
-import MovieResults from '@/components/MovieResults';
-import { useParams } from 'next/navigation'
-import React from 'react'
 
-export default  async function  SearchPage() {
-    const params= useParams()
+import MovieResults from '@/components/MovieResults';
+import React from 'react'
+type Props={
+  searchTerm:string
+}
+export default  async function  SearchPage({searchTerm}:Props) {
+
     const  API_KEY= process.env.REACT_APP_API_KEY;
 
- const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${params.searchTerm}&language=en-US&page=1&include_adult=false`)
+ const res= await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&language=en-US&page=1&include_adult=false`)
 const data= await res.json()
 if(!res.ok){
     throw Error;
