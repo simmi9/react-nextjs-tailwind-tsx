@@ -16,7 +16,7 @@ export default function MovieResults({movies}:MovieListProps) {
       {
         movies.map(
             (movie:Movie)=>{return (
-                <Card movie={movie} />
+                <Card movie={movie} key={movie.id}/>
             
         )}
         )

@@ -1,6 +1,5 @@
 'use client'
 import { Movie } from '@/app/types/Movie';
-import Card from '@/components/Card';
 import MovieResults from '@/components/MovieResults';
 import { useParams } from 'next/navigation'
 import React,{useEffect,useState} from 'react'
